@@ -2,10 +2,8 @@
 
 # our program goal is install to my sql
 DATE=$(date +%F:%H-%M-%S)
-LOGFILE=/tmp/
-
-USERID=$(id -u)
-# this function should validate the previous command it success or failure
+SCRIPT_NAME=$0
+LOGFILE=/tmp/$SCRIPT_NAME-$DATE.log
 VALIDATE(){
     #$1 ---> it will receive the argument1
     if [ $1 -ne 0 ]
@@ -18,6 +16,8 @@ VALIDATE(){
 
 
 }
+USERID=$(id -u)
+# this function should validate the previous command it success or failure
 if [ $USERID -ne 0 ]
 then
     echo "Error: Please run this script with root access"
