@@ -10,3 +10,11 @@ else
     echo "INFO: You are root user"
 fi
 yum install mysql -y
+
+if[ $? -ne 0]
+then
+    echo "Installation of my sql is error"
+    exit 1
+else
+    echo "Installation of mysql is success"
+fi        
