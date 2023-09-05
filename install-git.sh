@@ -1,6 +1,9 @@
 #!/bin/bash
 
 # our program goal is install to my sql
+DATE=$(date +%F:%H-%M-%S)
+LOGFILE=/tmp/
+
 USERID=$(id -u)
 # this function should validate the previous command it success or failure
 VALIDATE(){
