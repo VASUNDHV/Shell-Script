@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # our program goal is install to my sql
-DATE=$(date +%F:%H-%M-%S)
+DATE=$(date +%F)
 SCRIPT_NAME=$0
 LOGFILE=/tmp/$SCRIPT_NAME-$DATE.log
 VALIDATE(){
@@ -25,10 +25,10 @@ then
 else
     echo "INFO: You are root user"
 fi
-yum install mysql -y
+yum install mysql -y &>>$LOGFILE
 
 VALIDATE $? "Installing My SQL"      
 
-yum install postfix -y
+yum install postfix -y &>>$LOGFILE
 
 VALIDATE $? "Installing Postfix"
