@@ -14,4 +14,5 @@ while read line
 do
     #We write statements here
     echo "Deleteing $line" &>> $LOGFILE
-done < $FILES_TO_DELETE    
+    rm -rf $line
+done <<< $FILES_TO_DELETE    
